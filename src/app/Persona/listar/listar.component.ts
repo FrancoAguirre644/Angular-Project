@@ -11,12 +11,21 @@ import { Router } from '@angular/router';
 export class ListarComponent implements OnInit {
 
   personas: Persona[];
-  constructor(private Service: ServiceService, private router: Router) { }
+  constructor(private service: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.Service.getPersonas().subscribe(data => {
+    this.service.getPersonas().subscribe(data => {
       this.personas = data;
     })
   }
+
+  eliminar(idPersona: number) {
+
+    this.service.deletePersona(idPersona).subscribe(data => {
+      this.personas = this.personas.filter(p => p.idPerson != idPersona);
+    });
+
+  }
+
 
 }

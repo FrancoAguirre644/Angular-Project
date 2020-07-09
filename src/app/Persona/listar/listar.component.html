@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
 
 
-        <table class=" table table-striped" style="width: 700px;">
+        <table class=" table table-striped" style="width: 800px;">
             <thead>
                 <tr class="bg-danger">
                     <th scope="col">#</th>
@@ -11,6 +11,7 @@
                     <th scope="col">Last Name</th>
                     <th scope="col">Document Type</th>
                     <th scope="col">Document Number</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,6 +21,10 @@
                     <td>{{persona.lastName}}</td>
                     <td>{{persona.documentType}}</td>
                     <td>{{persona.documentNumber}}</td>
+                    <td>
+                        <button class="btn btn-warning" style="margin-right: 5px;">Edit</button>
+                        <button (click)="eliminar(persona.idPerson)" class="btn btn-danger">Remove</button>
+                    </td>
                 </tr>
 
             </tbody>

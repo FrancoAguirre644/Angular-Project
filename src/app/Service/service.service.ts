@@ -20,4 +20,9 @@ export class ServiceService {
     return this.http.post<Persona>(this.Url + "/new", persona);
   }
 
+  deletePersona(idPerson: number) {
+
+    return this.http.delete(this.Url + "/delete/" + idPerson);
+  }
+
 }
