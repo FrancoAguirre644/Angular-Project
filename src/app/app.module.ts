@@ -8,6 +8,7 @@ import { AddComponent } from './Persona/add/add.component';
 import { EditComponent } from './Persona/edit/edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceService } from '../app/Service/service.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ServiceService } from '../app/Service/service.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]
