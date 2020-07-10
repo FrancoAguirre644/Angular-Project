@@ -19,6 +19,11 @@ export class ListarComponent implements OnInit {
     })
   }
 
+  editar(idPersona: number) {
+    localStorage.setItem("id", idPersona.toString());
+    this.router.navigate(["edit"]);
+  }
+
   eliminar(idPersona: number) {
 
     this.service.deletePersona(idPersona).subscribe(data => {
@@ -26,6 +31,7 @@ export class ListarComponent implements OnInit {
     });
 
   }
+
 
 
 }

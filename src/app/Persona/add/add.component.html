@@ -8,10 +8,12 @@
                     <div class="form-row">
 
                         <div class="form-group col">
-                            <input type="text" #nombre class="form-control" placeholder="First name">
+                            <input type="text" class="form-control" name="name" [(ngModel)]="persona.name"
+                                placeholder="First name">
                         </div>
                         <div class="col-7">
-                            <input type="text" #apellido class="form-control" placeholder="Last name">
+                            <input type="text" class="form-control" [(ngModel)]="persona.lastName" name="lastName"
+                                placeholder="Last name">
                         </div>
 
 
@@ -21,7 +23,8 @@
 
 
                         <div class="form-group col">
-                            <select class="form-control " #tipoDocumento>
+                            <select class="form-control " name="documentType" [(ngModel)]="persona.documentType">
+                                <option [ngValue]="undefined" hidden>Document Type</option>
                                 <option value="DNI">DNI</option>
                                 <option value="CI">CI</option>
                                 <option value="LE">LE</option>
@@ -31,7 +34,8 @@
                         </div>
 
                         <div class="col">
-                            <input type="number" #numeroDocumento class="form-control" placeholder="Document Number">
+                            <input type="number" name="documentNumber" [(ngModel)]="persona.documentNumber"
+                                class="form-control" placeholder="Document Number">
                         </div>
 
 
@@ -39,8 +43,7 @@
 
                     <div class="text-center">
 
-                        <button (click)="guardar(nombre.value,apellido.value,tipoDocumento.value,numeroDocumento.value)"
-                            class="btn btn-info">Save</button>
+                        <button (click)="guardar()" class="btn btn-info">Save</button>
 
                     </div>
 

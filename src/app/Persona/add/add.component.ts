@@ -17,11 +17,7 @@ export class AddComponent implements OnInit {
 
   persona: Persona = new Persona();
 
-  guardar(nombre: String, apellido: String, tipoDocumento: String, numeroDocumento: number) {
-    this.persona.name = nombre;
-    this.persona.lastName = apellido;
-    this.persona.documentType = tipoDocumento;
-    this.persona.documentNumber = numeroDocumento;
+  guardar() {
 
     this.service.createPersona(this.persona).subscribe(data => {
       alert("Agregado Correctamente");

@@ -22,7 +22,8 @@
                     <td>{{persona.documentType}}</td>
                     <td>{{persona.documentNumber}}</td>
                     <td>
-                        <button class="btn btn-warning" style="margin-right: 5px;">Edit</button>
+                        <button (click)="editar(persona.idPerson)" class="btn btn-warning"
+                            style="margin-right: 5px;">Edit</button>
                         <button (click)="eliminar(persona.idPerson)" class="btn btn-danger">Remove</button>
                     </td>
                 </tr>

@@ -25,4 +25,12 @@ export class ServiceService {
     return this.http.delete(this.Url + "/delete/" + idPerson);
   }
 
+  getPersona(idPerson: number) {
+    return this.http.get<Persona>(this.Url + "/" + idPerson);
+  }
+
+  updatePersona(persona: Persona) {
+    return this.http.put<Persona>(this.Url + "/update", persona);
+  }
+
 }

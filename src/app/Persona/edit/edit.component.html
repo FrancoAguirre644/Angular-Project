@@ -1,1 +1,61 @@
-<p>edit works!</p>
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+        <div class="card" style="width: 700px;">
+            <h5 class="card-header">Update Person</h5>
+            <div class="card-body">
+                <form action="">
+                    <div class="form-row">
+
+                        <input type="hidden" class="form-control" name="idPerson" [(ngModel)]="persona.idPerson">
+
+
+                        <div class="form-group col">
+                            <input type="text" class="form-control" name="name" [(ngModel)]="persona.name"
+                                placeholder="First name">
+                        </div>
+                        <div class="col-7">
+                            <input type="text" class="form-control" [(ngModel)]="persona.lastName" name="lastName"
+                                placeholder="Last name">
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-row">
+
+
+                        <div class="form-group col">
+                            <select class="form-control " name="documentType" [(ngModel)]="persona.documentType">
+                                <option [ngValue]="undefined" hidden>Document Type</option>
+                                <option value="DNI">DNI</option>
+                                <option value="CI">CI</option>
+                                <option value="LE">LE</option>
+                                <option value="LC">LC</option>
+                            </select>
+
+                        </div>
+
+                        <div class="col">
+                            <input type="number" name="documentNumber" [(ngModel)]="persona.documentNumber"
+                                class="form-control" placeholder="Document Number">
+                        </div>
+
+
+                    </div>
+
+                    <div class="text-center">
+
+                        <button (click)="actualizar(persona)" class="btn btn-info">Update</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
